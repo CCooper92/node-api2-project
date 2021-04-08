@@ -12,6 +12,7 @@ const sharedConfig = {
       conn.run('PRAGMA foreign_keys = ON', done)
     },
   },
+ 
 }
 
 module.exports = {
@@ -22,5 +23,9 @@ module.exports = {
   testing: {
     ...sharedConfig,
     connection: { filename: './data/testing.db3' },
+  },
+  production: {
+    ...sharedConfig,
+    connection: { filename: './data/lambda.db3'},
   },
 }
